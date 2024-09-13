@@ -110,6 +110,7 @@ ob_end_clean(); // Limpiar el buffer de salida antes de enviar el PDF
 $pdf->Output('I', 'productos_reporte.pdf');
 
 // Otra manera de generar el FPDF
+
 /*// Mostrar errores para depuración (quitar en producción)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -163,14 +164,12 @@ $pdf->SetFont('Arial', '', 9);
 $index = 1;
 $total_factura = 0;
 
-// Generar filas de productos (datos ingresados manualmente)
 $productos = [
     ['Codigo_Barras' => '1234567890', 'Nombre_Producto' => 'Producto 1', 'Cantidad' => 2, 'Valor_Venta' => 1000],
     ['Codigo_Barras' => '9876543210', 'Nombre_Producto' => 'Producto 2', 'Cantidad' => 1, 'Valor_Venta' => 500],
     ['Codigo_Barras' => '4567890123', 'Nombre_Producto' => 'Producto 3', 'Cantidad' => 3, 'Valor_Venta' => 1500],
 ];
 
-// Rellenar los datos de la tabla con los productos
 foreach ($productos as $prod) {
     $cantidad = $prod['Cantidad'];
     $precio_unitario = $prod['Valor_Venta'];
